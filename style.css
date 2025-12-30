@@ -1,0 +1,119 @@
+:root {
+    --insta-border: #dbdbdb;
+    --insta-bg: #ffffff;
+    --insta-gray: #8e8e8e;
+    --insta-blue: #0095f6;
+    --insta-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.insta-container {
+    width: 935px;
+    height: 85vh;
+    background: var(--insta-bg);
+    border: 1px solid var(--insta-border);
+    display: flex;
+    border-radius: 4px;
+}
+
+/* Sidebar */
+.users-sidebar {
+    width: 350px;
+    border-right: 1px solid var(--insta-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--insta-border);
+    font-weight: 600;
+}
+
+.user-item {
+    display: flex;
+    padding: 12px 20px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-item.active { background-color: #efefef; }
+
+.avatar { width: 56px; height: 56px; border-radius: 50%; margin-right: 12px; border: 1px solid #dbdbdb; }
+
+.user-meta .display-name { display: block; font-weight: 500; font-size: 14px; }
+.user-meta .last-seen { color: var(--insta-gray); font-size: 12px; }
+
+/* Chat Area */
+.chat-area { flex: 1; display: flex; flex-direction: column; }
+
+.chat-header {
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--insta-border);
+}
+
+.header-user { display: flex; align-items: center; gap: 12px; }
+.avatar-sm { width: 24px; height: 24px; border-radius: 50%; }
+.header-text .name { font-weight: 600; font-size: 14px; display: block; }
+.header-text .status { font-size: 12px; color: var(--insta-gray); }
+
+/* Messages */
+.messages-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.timestamp { text-align: center; font-size: 12px; color: var(--insta-gray); margin: 20px 0; }
+
+.msg { display: flex; align-items: flex-end; gap: 8px; max-width: 70%; }
+.msg.outgoing { align-self: flex-end; }
+
+.msg-avatar { width: 24px; height: 24px; border-radius: 50%; }
+
+.bubble {
+    padding: 12px 16px;
+    border-radius: 22px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.incoming .bubble { border: 1px solid var(--insta-border); }
+.outgoing .bubble {
+    background-color: #efefef; /* Standard IG color */
+    color: black;
+}
+
+/* Footer Input */
+.input-container { padding: 20px; }
+.input-wrapper {
+    border: 1px solid var(--insta-border);
+    border-radius: 22px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.input-wrapper input { flex: 1; border: none; outline: none; font-size: 14px; }
+.input-tools { display: flex; gap: 15px; cursor: pointer; }
